@@ -1,0 +1,24 @@
+<!--
+  Dropdown panel, show/hide based on dropdown state.
+
+  Entering: "transition ease-out duration-100"
+    From: "transform opacity-0 scale-95"
+    To: "transform opacity-100 scale-100"
+  Leaving: "transition ease-in duration-75"
+    From: "transform opacity-100 scale-100"
+    To: "transform opacity-0 scale-95"
+-->
+{{#if @isOpen}}
+  <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg">
+    <div class="rounded-md bg-white shadow-xs py-1">
+      {{yield
+        (hash
+          Header=(component "dropdown/menu/header")
+          Divider=(component "dropdown/menu/divider")
+          Button=(component "dropdown/menu/button" closeMenu=@closeMenu)
+          Link=(component "dropdown/menu/link" closeMenu=@closeMenu)
+        )
+      }}
+    </div>
+  </div>
+{{/if}}

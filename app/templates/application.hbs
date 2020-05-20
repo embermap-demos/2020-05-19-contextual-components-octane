@@ -1,0 +1,49 @@
+<div class="w-screen h-screen bg-gray-100 pt-8 flex flex-col items-center">
+  <div>
+    Last clicked:
+    {{this.lastClicked}}
+  </div>
+  <div>{{outlet}}</div>
+
+  <div class="pt-16">
+    <Dropdown as |d|>
+      <d.Button>
+        Options
+        <svg class="-mr-1 ml-2 h-5 w-5 transform {{if d.isOpen 'rotate-180'}}" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </d.Button>
+  
+      <d.Menu as |m|>
+        <m.Header>
+          <p>
+            Signed in as
+          </p>
+          <p class="font-medium text-gray-900">
+            tom@example.com
+          </p>
+        </m.Header>
+        <m.Link @route='index'>
+          Home
+        </m.Link>
+        <m.Button>
+          Account settings
+        </m.Button>
+        <m.Button @onClick={{set this.lastClicked "Support"}} @shouldCloseMenu={{false}}>
+          Support
+        </m.Button>
+        <m.Link @route='license'>
+          License
+        </m.Link>
+        <m.Divider />
+        <m.Button>
+          Sign out
+        </m.Button>
+      </d.Menu>
+    </Dropdown>
+  </div>
+</div>
