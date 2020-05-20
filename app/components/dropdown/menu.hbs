@@ -1,0 +1,38 @@
+<!--
+  Dropdown panel, show/hide based on dropdown state.
+
+  Entering: "transition ease-out duration-100"
+    From: "transform opacity-0 scale-95"
+    To: "transform opacity-100 scale-100"
+  Leaving: "transition ease-in duration-75"
+    From: "transform opacity-100 scale-100"
+    To: "transform opacity-0 scale-95"
+-->
+{{#if @isOpen}}
+  <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg">
+    <div class="rounded-md bg-white shadow-xs">
+      <div class="px-4 py-3">
+        <p class="text-sm leading-5">
+          Signed in as
+        </p>
+        <p class="text-sm leading-5 font-medium text-gray-900">
+          tom@example.com
+        </p>
+      </div>
+      <div class="border-t border-gray-100"></div>
+      <div class="py-1">
+        <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">Account settings</a>
+        <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">Support</a>
+        <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">License</a>
+      </div>
+      <div class="border-t border-gray-100"></div>
+      <div class="py-1">
+        <form method="POST" action="#">
+          <button type="submit" class="block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+            Sign out
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+{{/if}}
