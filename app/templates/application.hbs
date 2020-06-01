@@ -1,13 +1,22 @@
 <div class="w-screen h-screen pt-12 bg-gray-100 flex justify-center">
   <Dropdown as |d|>
     <d.Button>
-      Menu
+      Options
       <svg class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
       </svg>
     </d.Button>
 
     <d.Menu>
+      <div class="px-4 py-3">
+        <p class="text-sm leading-5">
+          Signed in as
+        </p>
+        <p class="text-sm leading-5 font-medium text-gray-900">
+          tom@example.com
+        </p>
+      </div>
+      <div class="border-t border-gray-100"></div>
       <div class="py-1">
         <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">Account settings</a>
         <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">Support</a>
@@ -20,23 +29,6 @@
             Sign out
           </button>
         </form>
-      </div>
-    </d.Menu>
-  </Dropdown>
-
-  <Dropdown as |d|>
-    <d.Button>
-      Options
-      <svg class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
-      </svg>
-    </d.Button>
-
-    <d.Menu>
-      <div class="py-1">
-        <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">Account settings</a>
-        <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">Support</a>
-        <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">License</a>
       </div>
     </d.Menu>
   </Dropdown>
