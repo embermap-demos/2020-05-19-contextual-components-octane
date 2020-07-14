@@ -14,6 +14,7 @@
       {{yield (hash
         Header=(component 'dropdown/menu/header')
         Item=(component 'dropdown/menu/item')
+        Link=(component 'dropdown/menu/link' onClick=@closeMenu)
         Divider=(component 'dropdown/menu/divider')
       )}}
     </div>
