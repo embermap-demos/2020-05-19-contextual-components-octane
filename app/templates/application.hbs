@@ -1,27 +1,45 @@
-<div class="w-screen h-screen pt-12 bg-gray-100 flex justify-center">
-  <Dropdown as |d|>
-    <d.Button>
-      Options
-      <svg class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
-      </svg>
-    </d.Button>
+<div class="p-8 w-screen h-screen pt-12 bg-gray-100 flex flex-col">
+  <div class='flex justify-end'>
+    <Dropdown as |d|>
+      <d.Button>
+        Options
+        <svg class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        </svg>
+      </d.Button>
+  
+      <d.Menu as |m|>
+        <m.Header @firstLine='Signed in as' @secondLine='tom@example.com' />
+  
+        <m.Item>Account settings</m.Item>
+        <m.Item>Support</m.Item>
+        <m.Item>License</m.Item>
+  
+        <m.Divider />
+  
+        <m.Button @onClick={{this.archive}}>Archive</m.Button>
+        <m.Button @onClick={{this.toggleIsShowingMore}} @shouldCloseMenu={{false}}>
+          {{if this.isShowingMore 'Less' 'More'}}
+        </m.Button>
+  
+        <m.Divider />
+  
+        <m.Item>Sign out</m.Item>
+      </d.Menu>
+    </Dropdown>
+  </div>
 
-    <d.Menu as |m|>
-      <m.Header @firstLine='Signed in as' @secondLine='tom@example.com' />
+  <div>
+    {{#if this.isShowingMore}}
+      <p>
+        Showing more:
+      </p>
 
-      <m.Item>Account settings</m.Item>
-      <m.Item>Support</m.Item>
-      <m.Item>License</m.Item>
-
-      <m.Divider />
-
-      <m.Item>Archive</m.Item>
-      <m.Item>More</m.Item>
-
-      <m.Divider />
-
-      <m.Item>Sign out</m.Item>
-    </d.Menu>
-  </Dropdown>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, tempore beatae illum debitis laudantium inventore consequatur doloremque quo dolor dolorem perferendis, atque numquam praesentium, nihil fugit obcaecati? Consequatur, repellendus vitae.
+      </p>
+    {{else}}
+      Showing less info...
+    {{/if}}
+  </div>
 </div>
